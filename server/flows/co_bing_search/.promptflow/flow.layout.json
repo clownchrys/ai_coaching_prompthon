@@ -1,0 +1,25 @@
+{
+  "nodeLayouts": {
+    "inputs": {
+      "x": 12,
+      "y": 62,
+      "index": -1
+    },
+    "outputs": {
+      "x": 130.8984375,
+      "y": 461.7578125,
+      "index": -1
+    },
+    "bing_search_api": {
+      "x": 12,
+      "y": 282,
+      "index": 0
+    },
+    "bing_search": {
+      "x": 42.7265625,
+      "y": 372.0078125,
+      "index": -1
+    }
+  },
+  "orientation": "Vertical"
+}

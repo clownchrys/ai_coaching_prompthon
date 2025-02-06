@@ -32,4 +32,6 @@ be:
 serve:
 	pf flow serve --source ${BE}/flows/ai_coaching/ai-coaching-flow --port 8080 \
 	& pf flow serve --source ${BE}/flows/ai_interview --port 8081 \
-	& pf flow serve --source ${BE}/flows/ai_interview_fb --port 8082
+	& pf flow serve --source ${BE}/flows/ai_interview_fb --port 8082 \
+	& pf flow serve --source ${BE}/flows/co_bing_search --port 8083 \
+	& pf flow serve --source ${BE}/flows/naver_book_search --port 8084

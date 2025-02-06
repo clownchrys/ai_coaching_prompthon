@@ -1,0 +1,20 @@
+id: template_standard_flow
+name: Template Standard Flow
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  topic:
+    type: string
+    default: 삼성전자
+outputs:
+  result:
+    type: string
+    reference: ${bing_search_api.output}
+nodes:
+- name: bing_search_api
+  type: python
+  source:
+    type: code
+    path: bing_search_api.py
+  inputs:
+    input: ${inputs.topic}

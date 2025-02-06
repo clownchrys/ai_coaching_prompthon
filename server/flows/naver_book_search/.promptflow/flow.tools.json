@@ -4,6 +4,11 @@
     "joke.jinja2": {
       "type": "llm",
       "inputs": {
+        "books": {
+          "type": [
+            "string"
+          ]
+        },
         "job_position": {
           "type": [
             "string"

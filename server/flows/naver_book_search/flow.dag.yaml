@@ -5,7 +5,7 @@ environment:
 inputs:
   topic:
     type: string
-    default: SQLD
+    default: 리눅스
   job_position:
     type: string
     default: 웹기획
@@ -32,5 +32,6 @@ nodes:
     max_tokens: 256
     topic: ${search_books.output}
     job_position: ${inputs.job_position}
+    books: ${search_books.output}
   connection: open_ai_connection
   api: chat

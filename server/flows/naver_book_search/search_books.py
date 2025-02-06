@@ -39,11 +39,5 @@ def naver_book_search(input: str) -> dict:
     # 도서 검색 실행  
     books = search_books(keyword, client_id, client_secret)  
     print(books)
-    # 검색 결과 출력  
-    if books:  
-        for book in books:  
-            print(f"Title: {book['title']}, Author: {book['author']}, Publisher: {book['publisher']}, Link: {book['link']}, description: {book['description']}")  
-    else:  
-        print("No results found.")
 
     return books
