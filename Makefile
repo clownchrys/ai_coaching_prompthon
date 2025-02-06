@@ -7,7 +7,7 @@ PYTHON_VENV = ./server/.venv
 .PHONY: init
 init:
 	brew install npm
-	brew install python3.11
+	brew install python@3.11
 	python3.11 -m venv ${PYTHON_VENV}
 
 .PHONY: web
