@@ -1,0 +1,25 @@
+{
+  "nodeLayouts": {
+    "inputs": {
+      "x": 191.921875,
+      "y": -150.9140625,
+      "index": -1
+    },
+    "outputs": {
+      "x": 12,
+      "y": 392,
+      "index": -1
+    },
+    "search_books": {
+      "x": 124.484375,
+      "y": -19.515625,
+      "index": 0
+    },
+    "recom_books": {
+      "x": 122.140625,
+      "y": 132.8984375,
+      "index": 1
+    }
+  },
+  "orientation": "Vertical"
+}
