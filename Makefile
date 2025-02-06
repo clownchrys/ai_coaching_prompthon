@@ -28,3 +28,8 @@ be:
 	&& pip install -r requirements.txt \
 	&& python main.py
 
+.PHONY: serve
+serve:
+	pf flow serve --source ${BE}/flows/ai_coaching/ai-coaching-flow --port 8080 \
+	& pf flow serve --source ${BE}/flows/ai_interview --port 8081 \
+	& pf flow serve --source ${BE}/flows/ai_interview_fb --port 8082
