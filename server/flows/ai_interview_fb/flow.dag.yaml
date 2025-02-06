@@ -1,0 +1,26 @@
+id: template_standard_flow
+name: Template Standard Flow
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  interview_result:
+    type: string
+    default: " 면접관 : 자기소개를 해보세요. 면접자 : 안녕하세요. 데이터 엔지니어 직무에 지원한 지원자 입니다. 저는 2016년도
+      데이터 분산처리에 관심이 많아 백앤드 개발자에서 데이터 엔지니어로 직무 변경을 하였습니다."
+outputs:
+  feedback:
+    type: string
+    reference: ${feedback.output}
+nodes:
+- name: feedback
+  type: llm
+  source:
+    type: code
+    path: feedback.jinja2
+  inputs:
+    deployment_name: gpt-4o-mini
+    temperature: 1
+    max_tokens: 2000
+    feedback: ${inputs.interview_result}
+  connection: open_ai_connection
+  api: chat

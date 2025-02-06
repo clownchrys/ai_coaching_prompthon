@@ -1,0 +1,50 @@
+{
+  "package": {},
+  "code": {
+    "echo.py": {
+      "type": "python",
+      "inputs": {
+        "input": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "source": "echo.py",
+      "function": "echo"
+    },
+    "llm_node_eo0t.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "url": {
+          "type": [
+            "string"
+          ]
+        },
+        "examples": {
+          "type": [
+            "string"
+          ]
+        },
+        "text_content": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "llm_node_eo0t.jinja2"
+    },
+    "feedback.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "feedback": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "Prompt is a jinja2 template that generates prompt for LLM",
+      "source": "feedback.jinja2"
+    }
+  }
+}

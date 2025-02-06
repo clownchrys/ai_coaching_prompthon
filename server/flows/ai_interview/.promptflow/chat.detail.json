@@ -1,0 +1,177 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "3d46a4fa-cf60-43db-8d91-c6074208f705_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "chat_history": [
+          {
+            "inputs": {
+              "question": "안녕하세요. "
+            },
+            "outputs": {
+              "answer": "안녕하세요. 면접에 참석해 주셔서 감사합니다. 자기소개를 해보세요."
+            }
+          },
+          {
+            "inputs": {
+              "question": "안녕하세요. 저는 이번 잡코리아 데이터 엔지니어 직무에 지원한 지원자 김현수입니다. "
+            },
+            "outputs": {
+              "answer": "김현수님, 우리 회사에 지원한 이유는 무엇인가요?"
+            }
+          },
+          {
+            "inputs": {
+              "question": "cd /Users/gimhyeonsu/ai_coaching_prompthon-1/server/flows/ai_interview_fb"
+            },
+            "outputs": {
+              "answer": "제가 면접을 진행하고 있으니, 질문에 대해 답변해 주시면 감사하겠습니다. 본인의 강점과 약점은 무엇인가요?"
+            }
+          }
+        ],
+        "question": "/opt/homebrew/bin/python3.9 -m promptflow._cli._pf.entry flow test --flow /Users/gimhyeonsu/ai_coaching_prompthon-1/server/flows/ai_interview_fb"
+      },
+      "output": {
+        "answer": "김현수님, 면접 질문에 대한 답변을 부탁드립니다. 어려운 상황에서 갈등을 해결한 경험이 있나요?"
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "3d46a4fa-cf60-43db-8d91-c6074208f705",
+      "root_run_id": "3d46a4fa-cf60-43db-8d91-c6074208f705",
+      "source_run_id": null,
+      "flow_id": "template_chat_flow",
+      "start_time": "2025-02-06T13:58:46.238758Z",
+      "end_time": "2025-02-06T13:58:47.687091Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1738817926.238758,
+          "end_time": 1738817927.687091,
+          "children": [],
+          "system_metrics": {
+            "duration": 1.448333,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          },
+          "inputs": {
+            "chat_history": [
+              {
+                "inputs": {
+                  "question": "안녕하세요. "
+                },
+                "outputs": {
+                  "answer": "안녕하세요. 면접에 참석해 주셔서 감사합니다. 자기소개를 해보세요."
+                }
+              },
+              {
+                "inputs": {
+                  "question": "안녕하세요. 저는 이번 잡코리아 데이터 엔지니어 직무에 지원한 지원자 김현수입니다. "
+                },
+                "outputs": {
+                  "answer": "김현수님, 우리 회사에 지원한 이유는 무엇인가요?"
+                }
+              },
+              {
+                "inputs": {
+                  "question": "cd /Users/gimhyeonsu/ai_coaching_prompthon-1/server/flows/ai_interview_fb"
+                },
+                "outputs": {
+                  "answer": "제가 면접을 진행하고 있으니, 질문에 대해 답변해 주시면 감사하겠습니다. 본인의 강점과 약점은 무엇인가요?"
+                }
+              }
+            ],
+            "question": "/opt/homebrew/bin/python3.9 -m promptflow._cli._pf.entry flow test --flow /Users/gimhyeonsu/ai_coaching_prompthon-1/server/flows/ai_interview_fb"
+          },
+          "output": {
+            "answer": "<generator object post_process_chat_api_response.<locals>.generator at 0x113246cf0>"
+          },
+          "error": null
+        }
+      ],
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 1.448333,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "result": {
+        "answer": "김현수님, 면접 질문에 대한 답변을 부탁드립니다. 어려운 상황에서 갈등을 해결한 경험이 있나요?"
+      },
+      "upload_metrics": false,
+      "otel_trace_id": null,
+      "message_format": "basic"
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "chat",
+      "flow_run_id": "3d46a4fa-cf60-43db-8d91-c6074208f705",
+      "run_id": "3d46a4fa-cf60-43db-8d91-c6074208f705_chat_0",
+      "status": "Completed",
+      "inputs": {
+        "deployment_name": "gpt-4o-mini",
+        "max_tokens": 256,
+        "temperature": 0.7,
+        "chat_history": [
+          {
+            "inputs": {
+              "question": "안녕하세요. "
+            },
+            "outputs": {
+              "answer": "안녕하세요. 면접에 참석해 주셔서 감사합니다. 자기소개를 해보세요."
+            }
+          },
+          {
+            "inputs": {
+              "question": "안녕하세요. 저는 이번 잡코리아 데이터 엔지니어 직무에 지원한 지원자 김현수입니다. "
+            },
+            "outputs": {
+              "answer": "김현수님, 우리 회사에 지원한 이유는 무엇인가요?"
+            }
+          },
+          {
+            "inputs": {
+              "question": "cd /Users/gimhyeonsu/ai_coaching_prompthon-1/server/flows/ai_interview_fb"
+            },
+            "outputs": {
+              "answer": "제가 면접을 진행하고 있으니, 질문에 대해 답변해 주시면 감사하겠습니다. 본인의 강점과 약점은 무엇인가요?"
+            }
+          }
+        ],
+        "question": "/opt/homebrew/bin/python3.9 -m promptflow._cli._pf.entry flow test --flow /Users/gimhyeonsu/ai_coaching_prompthon-1/server/flows/ai_interview_fb",
+        "_inputs_to_escape": [
+          "chat_history",
+          "question"
+        ]
+      },
+      "output": "<generator object post_process_chat_api_response.<locals>.generator at 0x113246cf0>",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "3d46a4fa-cf60-43db-8d91-c6074208f705_0",
+      "start_time": "2025-02-06T13:58:46.239317Z",
+      "end_time": "2025-02-06T13:58:47.686221Z",
+      "index": 0,
+      "api_calls": [],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 1.446904
+      },
+      "result": "<generator object post_process_chat_api_response.<locals>.generator at 0x113246cf0>",
+      "message_format": "basic"
+    }
+  ]
+}
