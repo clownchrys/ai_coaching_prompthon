@@ -12,7 +12,7 @@ init:
 
 .PHONY: web
 web:
-	cd web && npm run dev
+	cd web && npm install && npm run dev
 
 .PHONY: server
 server:
