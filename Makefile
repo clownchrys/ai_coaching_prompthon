@@ -12,7 +12,7 @@ PYTHON_VERSION = 3.9
 init:
 	brew install npm
 	brew install python@${PYTHON_VERSION}
-	python@${PYTHON_VERSION} -m pip install -r ${BE}/requirements.txt
+	python${PYTHON_VERSION} -m pip install -r ${BE}/requirements.txt
 	python${PYTHON_VERSION} -m venv ${BE}/${PYTHON_VENV}
 
 .PHONY: fe
