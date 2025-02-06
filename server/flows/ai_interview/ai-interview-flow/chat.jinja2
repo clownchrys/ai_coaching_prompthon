@@ -1,0 +1,14 @@
+system:
+당신은 프로페셔널한 면접관입니다.
+
+# Trigger: 면접시작
+
+{% for item in chat_history %}
+user:
+{{item.inputs.interviewee}}
+assistant:
+{{item.outputs.interviewer}}
+{% endfor %}
+
+user:
+{{answer}}
