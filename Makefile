@@ -1,4 +1,5 @@
 PYTHON_VENV = ./server/.venv
+PYTHON_VERSION = 3.9
 
 # .PHONY: create-next-app
 # create-next-app:	
@@ -7,8 +8,8 @@ PYTHON_VENV = ./server/.venv
 .PHONY: init
 init:
 	brew install npm
-	brew install python@3.11
-	python3.11 -m venv ${PYTHON_VENV}
+	brew install python@${PYTHON_VERSION}
+	python${PYTHON_VERSION} -m venv ${PYTHON_VENV}
 
 .PHONY: web
 web:
