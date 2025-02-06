@@ -5,10 +5,10 @@ make init
 
 # FE boot on
 ```shell
-make web
+make fe
 ```
 
 # BE boot on
 ```shell
-make server
+make be
 ```
