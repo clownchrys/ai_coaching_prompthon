@@ -1,0 +1,36 @@
+id: template_standard_flow
+name: Template Standard Flow
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  topic:
+    type: string
+    default: SQLD
+  job_position:
+    type: string
+    default: 웹기획
+outputs:
+  books:
+    type: string
+    reference: ${recom_books.output}
+nodes:
+- name: search_books
+  type: python
+  source:
+    type: code
+    path: search_books.py
+  inputs:
+    input: ${inputs.topic}
+- name: recom_books
+  type: llm
+  source:
+    type: code
+    path: joke.jinja2
+  inputs:
+    deployment_name: gpt-4o-mini
+    temperature: 1
+    max_tokens: 256
+    topic: ${search_books.output}
+    job_position: ${inputs.job_position}
+  connection: open_ai_connection
+  api: chat

@@ -1,0 +1,34 @@
+{
+  "package": {},
+  "code": {
+    "joke.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "job_position": {
+          "type": [
+            "string"
+          ]
+        },
+        "topic": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "Prompt is a jinja2 template that generates prompt for LLM",
+      "source": "joke.jinja2"
+    },
+    "search_books.py": {
+      "type": "python",
+      "inputs": {
+        "input": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "search_books.py",
+      "function": "naver_book_search"
+    }
+  }
+}
