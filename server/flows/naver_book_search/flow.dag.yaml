@@ -29,7 +29,7 @@ nodes:
   inputs:
     deployment_name: gpt-4o-mini
     temperature: 1
-    max_tokens: 256
+    max_tokens: 2000
     topic: ${search_books.output}
     job_position: ${inputs.job_position}
     books: ${search_books.output}
