@@ -28,12 +28,13 @@ be:
 	&& pip install -r requirements.txt \
 	&& python main.py
 
+# && pf flow serve --source flows/ai_coaching/ai-coaching-flow --port 8080
+# && pf flow serve --source flows/ai_interview --port 8081
+# && pf flow serve --source flows/ai_interview_fb --port 8082
+# && pf flow serve --source flows/co_bing_search --port 8083
+# && pf flow serve --source flows/naver_book_search --port 8084
 .PHONY: serve
 serve:
 	cd ${BE} \
 	&& source ${PYTHON_VENV}/bin/activate \
-	&& pf flow serve --source flows/ai_coaching/ai-coaching-flow --port 8080
-# && pf flow serve --source ${BE}/flows/ai_interview --port 8081 \
-# && pf flow serve --source ${BE}/flows/ai_interview_fb --port 8082 \
-# && pf flow serve --source ${BE}/flows/co_bing_search --port 8083 \
-# && pf flow serve --source ${BE}/flows/naver_book_search --port 8084
+	&& pf flow serve --source flows/ai_interview_fb --port 8082

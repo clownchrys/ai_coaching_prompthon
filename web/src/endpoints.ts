@@ -1,1 +1,5 @@
 export const EP_AI_RESUME = "http://localhost:8080/score"
+export const EP_AI_INTERVIEW = "http://localhost:8081/score"
+export const EP_AI_INTERVIEW_FB = "http://localhost:8082/score"
+export const EP_CO_BING_SEARCH = "http://localhost:8083/score"
+export const EP_NAVER_BOOK_SEARCH = "http://localhost:8084/score"

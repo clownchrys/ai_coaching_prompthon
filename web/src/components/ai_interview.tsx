@@ -14,6 +14,8 @@ import { useSelector } from 'react-redux';
 // import { Dispatch } from 'redux';
 import { RootState } from '@/reducers';
 import { useDispatch } from "react-redux";
+import { EP_AI_INTERVIEW } from "@/endpoints";
+import axios from "axios";
 
 // speechsdk.Diagnostics.SetLoggingLevel(speechsdk.LogLevel.Debug);
 // speechsdk.Diagnostics.StartConsoleOutput();
@@ -129,14 +131,37 @@ export default function AIInterview() {
             },
         )
     }
-
-    const onInterviewStart = () => {
+    
+    const onInterviewStart = async () => {
         if (! interview_state.initialized) {
             tts(INIT_MESSAGE);
         }
         else if (interview_state.currentSpeaker == "면접관") {
-            // call llm
-            const generated = "llm calling..."
+            const question = interview_state.history.at(interview_state.history.length - 1)
+
+            const grouped = [];
+            for (let i = 0; i < interview_state.history.length; i += 2) {
+                grouped.push([
+                    interview_state.history[i],
+                    interview_state.history[i + 1]
+                ]);
+            }
+            const chat_history = grouped.map((v, i) => {
+                const question = v[0].text
+                const answer = v[1].text
+                return {
+                    inputs: { question },
+                    outputs: { answer },
+                }
+            })
+
+            const resp = await axios.post(EP_AI_INTERVIEW, {
+                question,
+                chat_history
+            })
+            console.log(resp.data)
+            // const generated = JSON.parse(resp.data.output)
+            const generated = resp.data.answer
             tts(generated);
         }
         else {

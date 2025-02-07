@@ -84,8 +84,8 @@ export default function AIResume() {
 
     const save_resume = (v: {resume?: string}) => {
         console.log(v)
-        axios.post(EP_AI_RESUME, {resume: v.resume}).then((value) => {
-            const suggestion = JSON.parse(value.data.output)
+        axios.post(EP_AI_RESUME, {resume: v.resume}).then((resp) => {
+            const suggestion = JSON.parse(resp.data.output)
             console.log(suggestion)
             set_suggestion(suggestion)
         }).catch((e) => {
