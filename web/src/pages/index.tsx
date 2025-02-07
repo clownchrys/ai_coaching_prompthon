@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from "next/image"
 import { Layout, Menu, Steps, theme } from 'antd';
 import { StepProps } from 'antd/es/steps';
+import { ThunderboltTwoTone } from '@ant-design/icons';
 
 import AIResume from '@/components/ai_resume';
 import AIInterview from '@/components/ai_interview';
@@ -49,7 +50,8 @@ export default function Main() {
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={["0"]}
-          items={[ { key: "0", label: "JK x AM Jobis" } ]}
+        
+          items={[ { key: "0", label:  <div><ThunderboltTwoTone twoToneColor="yellow" style={{fontSize: 20, color: "yellow"}} color='yellow'/>JK x AM Jobis</div> } ]}
           style={{ flex: 1, minWidth: 0 }}
         />
       </Header>

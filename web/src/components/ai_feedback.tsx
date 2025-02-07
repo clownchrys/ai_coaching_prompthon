@@ -67,14 +67,14 @@ export default function AIFeedback() {
                 } as Partial<FormValues>}
             >
                 <Row gutter={ 24 } justify="end" align="middle">
-                    <Form.Item name="job_position" label="직무" style={{marginRight: 30}}>
-                        <Input placeholder="직무를 입력해주세요 (도서 추천)" />
+                    <Form.Item required name="job_position" label="직무" style={{marginRight: 30}}>
+                        <Input placeholder="for 도서 추천" />
                     </Form.Item>
-                    <Form.Item name="topic" label="주제 분야" style={{marginRight: 30}}>
-                        <Input placeholder="주제 분야를 입력해주세요 (도서 추천)" />
+                    <Form.Item required name="topic" label="주제 분야" style={{marginRight: 30}}>
+                        <Input placeholder="for 도서 추천" />
                     </Form.Item>
-                    <Form.Item name="company" label="대상 기업">
-                        <Input placeholder="대상 기업을 입력해주세요 (기업 동향)" />
+                    <Form.Item required name="company" label="대상 기업">
+                        <Input placeholder="for 기업 동향" />
                     </Form.Item>
                 </Row>
                 <Form.Item label={null}>
@@ -96,7 +96,7 @@ export default function AIFeedback() {
                 { interview_feedback }
             </Card>
             <Divider/>
-            <h2>당신을 위해 추천해드려요</h2>
+            <h2>앞으로가 더 빛날 당신을 위해 추천해드려요</h2>
             <Row gutter={16}>
                 <Col span={8}>
                 <Card title="추천 도서" bordered={false}>
