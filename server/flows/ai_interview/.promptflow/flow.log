@@ -1,17 +1,13 @@
-2025-02-06 22:30:39 +0900   52802 execution.flow     INFO     Start executing nodes in thread pool mode.
-2025-02-06 22:30:39 +0900   52802 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
-2025-02-06 22:30:39 +0900   52802 execution.flow     INFO     Executing node chat. node run id: 0c43ed6f-c931-475f-8db1-af31ca27289a_chat_0
-2025-02-06 22:30:40 +0900   52802 execution.flow     INFO     Node chat completes.
-2025-02-06 22:31:04 +0900   52802 execution.flow     INFO     Start executing nodes in thread pool mode.
-2025-02-06 22:31:04 +0900   52802 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
-2025-02-06 22:31:04 +0900   52802 execution.flow     INFO     Executing node chat. node run id: 7ebe72f1-799b-4742-9744-f5f11899727d_chat_0
-2025-02-06 22:31:05 +0900   52802 execution.flow     INFO     Node chat completes.
-2025-02-06 22:58:44 +0900   52802 execution.flow     INFO     Start executing nodes in thread pool mode.
-2025-02-06 22:58:44 +0900   52802 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
-2025-02-06 22:58:44 +0900   52802 execution.flow     INFO     Executing node chat. node run id: 6aab638f-1626-4db0-bf34-d370928bb0cf_chat_0
-2025-02-06 22:58:45 +0900   52802 execution.flow     INFO     Node chat completes.
-2025-02-06 22:58:46 +0900   52802 execution.flow     INFO     Start executing nodes in thread pool mode.
-2025-02-06 22:58:46 +0900   52802 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
-2025-02-06 22:58:46 +0900   52802 execution.flow     INFO     Executing node chat. node run id: 3d46a4fa-cf60-43db-8d91-c6074208f705_chat_0
-2025-02-06 22:58:47 +0900   52802 execution.flow     INFO     Node chat completes.
-2025-02-06 22:58:57 +0900   52802 execution.flow     INFO     Received signal 2(SIGINT), start to exit sync flow execution.
+2025-02-07 10:13:48 +0900   92460 execution.flow     INFO     Start executing nodes in thread pool mode.
+2025-02-07 10:13:48 +0900   92460 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
+2025-02-07 10:13:48 +0900   92460 execution.flow     INFO     Executing node chat. node run id: 4ee8c2a3-377f-417b-84dd-e8c6359a1a94_chat_0
+2025-02-07 10:13:49 +0900   92460 execution.flow     INFO     Node chat completes.
+2025-02-07 10:16:43 +0900   92460 execution.flow     INFO     Start executing nodes in thread pool mode.
+2025-02-07 10:16:43 +0900   92460 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
+2025-02-07 10:16:43 +0900   92460 execution.flow     INFO     Executing node chat. node run id: 531ad233-504c-46d6-a448-e817ef442311_chat_0
+2025-02-07 10:16:44 +0900   92460 execution.flow     INFO     Node chat completes.
+2025-02-07 10:16:50 +0900   92460 execution.flow     INFO     Start executing nodes in thread pool mode.
+2025-02-07 10:16:50 +0900   92460 execution.flow     INFO     Start to run 1 nodes with concurrency level 16.
+2025-02-07 10:16:50 +0900   92460 execution.flow     INFO     Executing node chat. node run id: 6dae9473-e473-40b4-9c69-7a17e7d1fdde_chat_0
+2025-02-07 10:16:52 +0900   92460 execution.flow     INFO     Node chat completes.
+2025-02-07 10:16:56 +0900   92460 execution.flow     INFO     Received signal 2(SIGINT), start to exit sync flow execution.
