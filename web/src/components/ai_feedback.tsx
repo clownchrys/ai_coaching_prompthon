@@ -108,6 +108,7 @@ export default function AIFeedback() {
                     { book_info && 
                     <>
                         <br/>
+                        <p>링크: </p>
                         <Link passHref target="_blank" rel="noopener noreferrer" href={ book_info && book_info.link || "" }>
                             { book_info && book_info.link || "no link" }
                         </Link>
