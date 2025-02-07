@@ -429,11 +429,6 @@
             "string"
           ]
         },
-        "guide": {
-          "type": [
-            "string"
-          ]
-        },
         "resume": {
           "type": [
             "string"

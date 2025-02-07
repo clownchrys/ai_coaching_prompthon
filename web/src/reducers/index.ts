@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 import interview from "@/reducers/interview"
+import resume from "@/reducers/resume"
 
 const rootReducer = combineReducers({
-    interview
+    interview,
+    resume,
 })
 
 export default rootReducer;

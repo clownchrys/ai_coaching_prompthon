@@ -29,52 +29,6 @@ inputs:
       특히, 사용자 요구사항을 분석하고 그에 맞는 솔루션을 제시하는 데 강점을 가지고 있습니다. 팀워크와 커뮤니케이션 능력을 바탕으로
       프로젝트를 성공적으로 이끌어 나가며, 지속적인 도구: Git, Docker, JIRA   자격증  정보처리기사 (2021년 취득
       학습과 성장을 통해 기업과 함께 발전하고자 합니다. 감사합니다."
-  model:
-    type: string
-    default: gpt-4o-mini
-  guide:
-    type: string
-    default: >2-
-         - 경력 기술서 작성 방법
-             - KPI 검색기→ 성과 리스트업 → 성과 분해 → 역할 정리 → 기술 정리 → 최종 확인
-                 - KPI 검색기
-                     - KPI 검색기는 효과적으로 나의 성과를 규정하기 위해 툴입니다.
-                     직무를 검색하면 직무에 대한 KPI와 그 KPI에 대한 설명, 세가지 예시까지 확인할 수 있습니다.
-                     - KPI란 Key Performance Indicator의 약자로 핵심 성과 지표를 의미합니다.
-                     KPI는 직무별로 중요한 성과 지표를 제시하며 개인의 성과를 평가하는 기준으로 사용됩니다.
-                 - 섬과 리스트업
-                     - 성과별로 그 성과를 만들기 위해 일했던 기간, 또는 성과와 관련된 프로젝트 기간을 입력해주시면 됩니다.
-                     - 체크 리스트
-                         ```
-                         - [ ]  1년 이하의 프로젝트 혹은 업무인가요?
-                         - [ ]  프로젝트 기간을 개월 수로 작성했나요?
-                         - [ ]  1년이 넘은 기간일 경우, 00년 00개월로 표시했나요?
-                         - [ ]  결과물이 나온 성과로 작성했나요? (진행 중이면 X)
-                         ```
-                 - 성과 분해
-                     - 성과를 분해하며 **내가 성과를 내기 위해 했던 액션을 정리**하는 과정입니다.
-                     성과분해에서 작성한 내용은 경력기술서에서 ‘역할’ 칸에 들어가게 됩니다.
-                     - 역할을 작성 시 주의할 점은 do list만을 나열할 경우 물경력으로 보여질 수 있어,
-                     전략적인 액션을 보여주기 위해서 3가지 프로세스로 성과를 분해해야 합니다.
-                         1. 문제를 해결하기 위한 액션
-                         2. 생산성을 높이기 위한 액션
-                         3. 의사소통을 잘하기 위한 액션
-                 - 역할 정리
-                     - 성과를 내기 위해 했던 액션들을 말합니다.
-                     - 앞선 3단계의 성과 분해가 잘 되었다면 이번 역할 정리는 정말 쉽습니다.
-                     강조하고 싶은 순서대로 세가지 질문에 대한 답을 복사해 역할 정리 칸에 붙여넣어주세요.
-                     - 최종으로 정리한 역할은 5개가 넘어가지 않아야 하며, 핵심 내용 외에 하고 싶은 이야기는 면접장에서 직접 설명하는게 좋습니다.
-                     - **역할 작성 시 체크리스트**
-                         - 문제 해결을 하기 위한 액션이 포함되어 있나요?
-                         - 생산성을 높이기 위한 액션이 포함되어 있나요?
-                         - 의사소통을 잘하기 위한 액션이 포함되어 있나요?
-                         - 당연히 해야 하는 do list로만 구성되지 않도록 작성했나요?
-                         - 역할 개수가 3~5개인가요?
-                 - 기술 정리
-                     - 우리가 일할 때 사용했던 시스템이나 프로그램, 업무를 하는 과정에서 배우거나 활용한 정책과 규정 등을 말합니다. 경력기술서에서 가장 비중이 떨어지는 부분이나, 업무 툴에 대한 이해도를 볼 수 있어 유용하게 작용하기도 합니다.
-                         - 지원하는 기업에서 우대하는 기술을 찾아보셨나요?
-                         - 당연히 필요한 역량이나 의미없는 역량(의사소통능력, 협상력 등)은 제외했나요?
-                 - 최종 확인
 outputs:
   output:
     type: string
@@ -89,7 +43,7 @@ nodes:
   inputs:
     connection: open_ai_connection
     api: chat
-    deployment_name: ${inputs.model}
+    deployment_name: gpt-4o-mini
     temperature: 1
     resume: ${inputs.resume}
     response_format:
@@ -103,10 +57,9 @@ nodes:
   inputs:
     connection: open_ai_connection
     api: chat
-    deployment_name: ${inputs.model}
+    deployment_name: gpt-4o-mini
     keywords: ${extract_keywords.output}
     resume: ${inputs.resume}
-    guide: ${inputs.guide}
 - name: suggest_contents
   type: custom_llm
   source:
@@ -116,6 +69,6 @@ nodes:
   inputs:
     connection: open_ai_connection
     api: chat
-    deployment_name: ${inputs.model}
+    deployment_name: gpt-4o-mini
     evaluation: ${evaluate_resume.output}
     resume: ${inputs.resume}

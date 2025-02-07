@@ -5,6 +5,7 @@ import { StepProps } from 'antd/es/steps';
 
 import AIResume from '@/components/ai_resume';
 import AIInterview from '@/components/ai_interview';
+import AIFeedback from '@/components/ai_feedback';
 
 const { Header, Content, Footer } = Layout;
 
@@ -30,12 +31,11 @@ export default function Main() {
           title: 'Step 3',
           subTitle: 'AI 피드백',
           status: current > 2 ? 'finish' : "process",
-          description: '완벽하게 준비하기!',
+          description: '완벽하게 보완하기!',
       },
   ]
 
   const onChange = (value: number) => {
-    console.log('onChange:', value);
     setCurrent(value);
   };
 
@@ -43,13 +43,13 @@ export default function Main() {
     <Layout>
       <Header style={{ display: 'flex', alignItems: 'center' }}>
         <div className="demo-logo" >
-            <Image src="/jkam.png" alt="Jobkorea Logo" width={ 91 } height={ 91 } />
+            <Image src="/jkam.png" alt="Logo" width={ 91 } height={ 91 } />
         </div>
         <Menu
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={["0"]}
-          items={[ { key: "0", label: "AI Coach Service" } ]}
+          items={[ { key: "0", label: "JK x AM Jobis" } ]}
           style={{ flex: 1, minWidth: 0 }}
         />
       </Header>
@@ -73,11 +73,12 @@ export default function Main() {
           <div>
             { current == 0 && <AIResume/> }
             { current == 1 && <AIInterview/> }
+            { current == 2 && <AIFeedback/> }
           </div>
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        JK x AM AI 코치 서비스 ©{new Date().getFullYear()} Created by 유부초밥
+        JK x AM Jobis ©{new Date().getFullYear()} Created by 유부초밥
       </Footer>
     </Layout>
   );
