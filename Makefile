@@ -37,4 +37,4 @@ be:
 serve:
 	cd ${BE} \
 	&& source ${PYTHON_VENV}/bin/activate \
-	&& pf flow serve --source flows/ai_interview_fb --port 8082
+	&& pf flow serve --source flows/co_bing_search --port 8083
