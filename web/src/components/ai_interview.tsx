@@ -16,6 +16,7 @@ import { RootState } from '@/reducers';
 import { useDispatch } from "react-redux";
 import { EP_AI_INTERVIEW } from "@/endpoints";
 import axios from "axios";
+import { useState } from "react";
 
 // speechsdk.Diagnostics.SetLoggingLevel(speechsdk.LogLevel.Debug);
 // speechsdk.Diagnostics.StartConsoleOutput();
@@ -32,6 +33,8 @@ export default function AIInterview() {
     const interview_state = useSelector(( state: RootState ) => state.interview)
     console.log(interview_state)
 
+    const [ loading, set_loading ] = useState(false)
+    
     function stt() {
         const recognizer_config = speechsdk.SpeechConfig.fromSubscription(token, region);
         recognizer_config.speechRecognitionLanguage = "ko-KR"
@@ -44,6 +47,7 @@ export default function AIInterview() {
         speech_recognizer.recognizeOnceAsync(
             (result): void => {
                 let directive: DirectiveType;
+                set_loading(false)
 
                 // 인식 성공
                 if (result.reason == speechsdk.ResultReason.RecognizedSpeech) {
@@ -84,6 +88,7 @@ export default function AIInterview() {
                 }
             },
             (e) => {
+                set_loading(false)
                 console.log(`Unexpected case: ${e}`)
                 const directive: DirectiveRetry = { count: 1 }
                 dispatch(actions.set({ directive }))
@@ -103,6 +108,7 @@ export default function AIInterview() {
         speech_synthesizer.speakTextAsync(
             text,
             (result): void => {
+                set_loading(false)
                 if (result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted) {
                     dispatch(actions.set({
                         currentSpeaker: "지원자",
@@ -127,12 +133,15 @@ export default function AIInterview() {
                 }
             },
             (e) => {
+                set_loading(false)
                 console.log(`Unexpected case: ${e}`)
             },
         )
     }
     
     const onInterviewStart = async () => {
+        set_loading(true)
+
         if (! interview_state.initialized) {
             tts(INIT_MESSAGE);
         }
@@ -187,6 +196,7 @@ export default function AIInterview() {
                         htmlType="submit"
                         style={{ width: 100 }}
                         onClick={ onInterviewStart }
+                        loading={ loading }
                     >
                         { ! interview_state.initialized && "시작하기"  }
                         { interview_state.initialized && `${interview_state.currentSpeaker} 차례` }

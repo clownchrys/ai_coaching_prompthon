@@ -44,21 +44,38 @@ type SuggestionResponse = {
     ]
 }
 
+// const defaultSuggestion: SuggestionResponse = {
+//     text: "웹 애플리케이션 개발 및 유지보수",
+//     suggestion: [
+//         {
+//             text: "웹 애플리케이션 개발을 통해 서비스 응답 시간을 25% 단축시키고, 사용자 만족도를 15% 향상시켰습니다.",
+//             reason: "구체적인 숫자를 통해 성과를 명확히 제시하여 전문성을 강화할 수 있습니다."
+//         },
+//         {
+//             text: "5명의 팀원과 협력하여 웹 애플리케이션을 3개월 내에 개발, 성공적으로 2000명의 사용자에게 서비스 런칭하였습니다.",
+//             reason: "팀워크와 프로젝트 성과를 수치적으로 보여주어 협업 능력과 전문성을 동시에 부각할 수 있습니다."
+//         },
+//         {
+//             text: "웹 애플리케이션 유지보수를 통해 버그 발생률을 40% 감소시키고, 평균 응답 속도를 30% 개선하였습니다.",
+//             reason: "구체적인 수치로 사용자 경험의 개선을 보여주어 효과적인 결과를 강조할 수 있습니다."
+//         },
+//     ]
+// }
+
 const defaultSuggestion: SuggestionResponse = {
-    text: "웹 애플리케이션 개발 및 유지보수",
-    // text: "Agile 방법론을 통한 팀 프로젝트 관리",
+    text: "",
     suggestion: [
         {
-            text: "웹 애플리케이션 개발을 통해 서비스 응답 시간을 25% 단축시키고, 사용자 만족도를 15% 향상시켰습니다.",
-            reason: "구체적인 숫자를 통해 성과를 명확히 제시하여 전문성을 강화할 수 있습니다."
+            text: "",
+            reason: ""
         },
         {
-            text: "5명의 팀원과 협력하여 웹 애플리케이션을 3개월 내에 개발, 성공적으로 2000명의 사용자에게 서비스 런칭하였습니다.",
-            reason: "팀워크와 프로젝트 성과를 수치적으로 보여주어 협업 능력과 전문성을 동시에 부각할 수 있습니다."
+            text: "",
+            reason: ""
         },
         {
-            text: "웹 애플리케이션 유지보수를 통해 버그 발생률을 40% 감소시키고, 평균 응답 속도를 30% 개선하였습니다.",
-            reason: "구체적인 수치로 사용자 경험의 개선을 보여주어 효과적인 결과를 강조할 수 있습니다."
+            text: "",
+            reason: ""
         },
     ]
 }
@@ -68,6 +85,7 @@ export default function AIResume() {
     const resume_state = useSelector(( state: RootState ) => state.resume)
     const [ suggestion, set_suggestion ] = useState<SuggestionResponse>(defaultSuggestion)
     const [ selected_suggestion, set_selected_suggestion ] = useState<string>("")
+    const [ loading, set_loading ] = useState(false)
 
     // rowSelection object indicates the need for row selection
     const rowSelection: TableProps<DataType>['rowSelection'] = {
@@ -84,12 +102,15 @@ export default function AIResume() {
 
     const save_resume = (v: {resume?: string}) => {
         console.log(v)
+        set_loading(true)
         axios.post(EP_AI_RESUME, {resume: v.resume}).then((resp) => {
             const suggestion = JSON.parse(resp.data.output)
             console.log(suggestion)
             set_suggestion(suggestion)
+            set_loading(false)
         }).catch((e) => {
             console.log(e)
+            set_loading(false)
         })
         dispatch(resumeAction.set({ currentResume: v.resume ? v.resume : "" }))
     }
@@ -113,7 +134,12 @@ export default function AIResume() {
                 <Form.Item label={null}>
                     <Row gutter={ 24 } justify="end" align="middle">
                         <Col>
-                            <Button type="primary" htmlType="submit" style={{ width: 100 }}>첨삭하기</Button>
+                            <Button
+                                type="primary"
+                                htmlType="submit"
+                                style={{ width: 100 }}
+                                loading={loading}
+                            >첨삭하기</Button>
                         </Col>
                     </Row>
                 </Form.Item>
@@ -127,7 +153,7 @@ export default function AIResume() {
                         <Table<DataType>
                             columns={columns}
                             dataSource={data}
-                            title={() => <h2>원본 텍스트: "웹 애플리케이션 개발 및 유지보수"</h2>}
+                            title={() => <h2>원본 텍스트: "{ suggestion && suggestion.text || "" }"</h2>}
                             pagination={false}
                             rowSelection={rowSelection}
                             style={carouselStyle}
