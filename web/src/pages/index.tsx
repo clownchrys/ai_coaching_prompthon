@@ -51,7 +51,7 @@ export default function Main() {
           mode="horizontal"
           defaultSelectedKeys={["0"]}
         
-          items={[ { key: "0", label:  <div><ThunderboltTwoTone twoToneColor="yellow" style={{fontSize: 20, color: "yellow"}} color='yellow'/>JK x AM Jobis</div> } ]}
+          items={[ { key: "0", label:  <div><ThunderboltTwoTone twoToneColor="yellow" style={{fontSize: 20, color: "yellow"}} color='yellow'/>Jobis</div> } ]}
           style={{ flex: 1, minWidth: 0 }}
         />
       </Header>
